@@ -213,13 +213,13 @@ fn snake_movement_input(
     mut heads: Query<&mut SnakeHead>
 ){
     if let Some(mut head) = heads.iter_mut().next() {
-        let dir: Direction = if keyboard_input.pressed(KeyCode::Left) {
+        let dir: Direction = if keyboard_input.just_pressed(KeyCode::Left) {
             Direction::Left
-        } else if keyboard_input.pressed(KeyCode::Down) {
+        } else if keyboard_input.just_pressed(KeyCode::Down) {
             Direction::Down
-        } else if keyboard_input.pressed(KeyCode::Up) {
+        } else if keyboard_input.just_pressed(KeyCode::Up) {
             Direction::Up
-        } else if keyboard_input.pressed(KeyCode::Right) {
+        } else if keyboard_input.just_pressed(KeyCode::Right) {
             Direction::Right
         } else {
             head.direction
